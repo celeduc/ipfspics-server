@@ -34,7 +34,7 @@ $db = new PDO('mysql:host=localhost;dbname=hashes;charset=utf8', $db_user, $db_p
     PDO::ATTR_PERSISTENT => true
 ));
 $ip=$_SERVER['REMOTE_ADDR'];
-$info = $db->query("SElECT hash FROM hash_info WHERE hash='$hash'")->fetch();
+$info = $db->query("SELECT hash FROM hash_info WHERE hash='$hash'")->fetch();
 
 if ( $info['hash'] ) {
 	$hash = $info['hash'];
