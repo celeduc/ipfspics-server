@@ -41,7 +41,7 @@ if ( $info['hash'] ) {
 } else {
 	exit("unknown hash");
 }
-$votes = $db->query("SElECT * FROM votes WHERE hash='$hash' AND ip='$ip'")->fetch();
+$votes = $db->query("SELECT * FROM votes WHERE hash='$hash' AND ip='$ip'")->fetch();
 
 if ( $votes['hash'] ) {
 	//already voted, we change the vote if one is not spamming
