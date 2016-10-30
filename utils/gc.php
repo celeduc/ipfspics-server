@@ -29,7 +29,7 @@ $ipfs = new IPFS("localhost", "8080", "5001");
 // Makes sure all the banned hashes are removed
 
 if (!in_array("skipUnpin", $argv) ) {
-	$bannedHashes = $db->query("SElECT * FROM hash_info WHERE banned = 1;")->fetchAll();
+	$bannedHashes = $db->query("SELECT * FROM hash_info WHERE banned = 1;")->fetchAll();
 
 	foreach($bannedHashes as $i) {
 		$hash = $i['hash'];
@@ -39,7 +39,7 @@ if (!in_array("skipUnpin", $argv) ) {
 }
 
 if (!in_array("skipPin", $argv) ) {
-	$notBannedHashes = $db->query("SElECT * FROM hash_info WHERE banned != 1;")->fetchAll();
+	$notBannedHashes = $db->query("SELECT * FROM hash_info WHERE banned != 1;")->fetchAll();
 
 	foreach($notBannedHashes as $i) {
 		$hash = $i['hash'];
