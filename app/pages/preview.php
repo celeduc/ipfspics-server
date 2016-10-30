@@ -44,7 +44,7 @@ define("defaultTitle", "A picture hosted on the permanent web");
 define("defaultThumbnail", "https://ipfs.pics/ipfs/$hash");
 define("defaultDescription", "Click to see it");
 
-$info = $db->query("SElECT * FROM hash_info WHERE hash='$hash'")->fetch();
+$info = $db->query("SELECT * FROM hash_info WHERE hash='$hash'")->fetch();
 
 if ( $info['hash'] ) {
 	$dirContent = $ipfs->ls($hash);
